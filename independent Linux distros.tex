@@ -15,6 +15,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{setspace}
 \usepackage{sectsty}
+\usepackage{longtable}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=black,bookmarksopen=true]{hyperref}
 \sectionfont{%			            % Change font of \section command
 	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
@@ -39,12 +40,13 @@
 	
 	In the following table, PMS refers to package management system and rec. is recommended. When an init system is listed as recommended, the choice is ultimately up to the user.  
 	\begin{landscape}
-	\begin{table}
-		\begin{tabular}{|p{3.5cm}|p{2.3cm}|p{1.6cm}|p{2.3cm}|p{1.9cm}|p{14.8cm}|}
+	\begin{longtable}{|p{3.5cm}|p{2.3cm}|p{1.6cm}|p{2.3cm}|p{1.9cm}|p{14.8cm}|}
 			\hline
-			Distro & PMS & Release & Init system & Founded & Other characteristics\\\hline
+			\textbf{Distro} & \textbf{PMS} & \textbf{Release} & \textbf{Init system} & \textbf{Founded} & \textbf{Other characteristics}\\\hline
+			4MLinux & TXZ & Fixed & Busybox & 2010, PL & Focuses on the 4 Ms: multimedia, maintenance, miniserver and mystery (small games). Lightweight. \\\hline 
 			Alpine Linux & APK & Fixed & Busybox, OpenRC & 2005, NO & Uses musl as C system library. Designed to be small, simple and secure and used for servers, routers, embedded devices, etc. \\\hline
-			Arch Linux & pacman & Rolling & systemd & 2002, CA & Follows KISS principle. \\\hline
+			ALT Linux & RPM/APT & Fixed & systemd & 2001, RU & Early fork of Mandrake. \\\hline 
+			Arch Linux & Pacman & Rolling & systemd & 2002, CA & Follows KISS principle. \\\hline
 			Chimera Linux & APK (bin); cports (src) & Rolling & Dinit & 2021, ES & Uses musl C library and FreeBSD userland. \\\hline
 			Debian & dpkg/APT & Fixed & systemd & 1993, USA & Basis of most Linux distros, such as Ubuntu.\\\hline
 			Dragora GNU/Linux-Libre & TLZ & Fixed & SysV & 2009, AR & Uses only FOSS. \\\hline
@@ -53,20 +55,26 @@
 			Fedora & RPM/dnf & Fixed & systemd & 2003, USA & Based on earlier Red Hat Linux. Basis of RHEL. \\\hline
 			Gentoo & Portage & Rolling & OpenRC rec. & 2002, USA & Most popular source-based distribution. \\\hline
 			Guix System & Guix & Fixed & Shepherd & 2015, FR & Whole system configured in Guile language; reproducible builds. \\\hline
+			Hyperbola GNU/Linux-libre & Pacman & Fixed & OpenRC & 2017, BR & Only uses FOSS. Previously used patches from Debian and snapshots from Arch. \\\hline
+			IPFire & pakfire & Fixed & Other & <2015, DE & Uses WebUI. \\\hline
+			KaOS & Pacman & Rolling & systemd & 2003, USA & Uses KDE as default desktop. \\\hline 
 			Linux From Scratch & None & Fixed & Up to user & 1999, CA & Self-made Linux system. \\\hline
 			Mageia & RPM/dnf & Fixed & systemd & 2011, FR & urpmi was original package manager; forked from Mandriva Linux by former employees of its maintainer. \\\hline
 			NixOS & Nix & Fixed & systemd & 2003, NL & Whole system configured in Nix language; reproducible builds. \\\hline
+			openmamba GNU/Linux & RPM/dnf & Rolling & systemd & <2008, IT & Offers KDE and LXQt desktops. \\\hline
 			OpenMandriva Lx & RPM/dnf & Fixed \& rolling. & systemd & 2013, FR & Smaller development team than Mageia. Built with Clang instead of GCC. \\\hline
 			openSUSE & RPM/zypper & Fixed \& rolling. & systemd & 1994, DE & Has openSUSE build service for building custom packages. \\\hline
 			paldo GNU/Linux & Upkg & Rolling & ? & 2004, CH & Hybrid (binary/source) approach to package management. Used for data rescue and uses GNOME. \\\hline
 			PCLinuxOS & RPM/APT & Rolling & SysV & 2003, USA & Designed to be beginner-friendly. \\\hline
+			Pisi Linux & PiSi & Fixed & SysV & 2013?, TR & Based on defunct Pardus Linux (that used PiSi). \\\hline
 			Puppy Linux & PET & Fixed & SysV & 2003, AU & Lightweight, designed to be run from live sessions and can be run from RAM. \\\hline
+			rlxos & Flatpak & Fixed & systemd & 2023?, IN & Uses immutable filesystem and Bolt AI assistant. \\\hline
 			Slackware Linux & TXZ & Fixed & SysV & 1993, USA & Oldest continually developed Linux distro. \\\hline
 			Solus & eopkg & Rolling & systemd & 2015, IE & Started the development of the Budgie desktop environment. \\\hline
+			Tiny Core Linux & TCE & Fixed & Busybox & 2009, USA & Uses 16MB RAM to boot and is designed to be the lightest distro possible. \\\hline
 			Void & XBPS & Rolling & runit & 2008, ES & Offers editions using glibc and musl. \\\hline
 			Venom Linux & scratchpkg & Rolling & SysV & 2021, MY & Uses Openbox for GUI and has textual installer. \\\hline
 			Vine Linux & RPM/APT & Rolling & ? & 1998, JP & Had fixed releases, with the last released in 2017. \\\hline
-		\end{tabular}
-	\end{table}
+	\end{longtable}
 	\end{landscape}
 	\end{document}
