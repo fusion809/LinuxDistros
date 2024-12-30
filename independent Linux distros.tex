@@ -16,6 +16,13 @@
 \usepackage{setspace}
 \usepackage{sectsty}
 \usepackage{longtable}
+\newenvironment{tightcenter}{%
+	\setlength\topsep{0pt}
+	\setlength\parskip{0pt}
+	\begin{center}
+	}{%
+	\end{center}
+}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=black,bookmarksopen=true]{hyperref}
 \sectionfont{%			            % Change font of \section command
 	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
@@ -32,60 +39,61 @@
 \newcommand{\NewSubPart}[1]{\subsection*{\hspace{0.2cm}#1}}
 \renewcommand{\baselinestretch}{2.0}
 \usepackage[margin=0.1in]{geometry}
-\title{Independent Linux distros}
 \date{}
 
 \begin{document}
-	\maketitle
+	
+	\begin{tightcenter}
+		{\LARGE Independent\footnote{In the sense of having no actively maintained parent distribution.} Linux distributions}\\
+	\end{tightcenter}
 	  
-			In the following table, PMS refers to package management system and rec. is recommended. When an init system is listed as recommended, the choice is ultimately up to the user.
 	\begin{longtable}{|p{3.5cm}|p{2.3cm}|p{1.6cm}|p{2.4cm}|p{2.0cm}|p{14.7cm}|}
 			\hline
-			\textbf{Distro} & \textbf{PMS} & \textbf{Release} & \textbf{Init system} & \textbf{Founded} & \textbf{Other characteristics}\\\hline
+			\textbf{Distro} & \textbf{PMS}\footnote{Package management system} & \textbf{Release} & \textbf{Init system} & \textbf{Founded} & \textbf{Other characteristics}\\\hline
 			4MLinux & TXZ\footnote{Which I use to indicate that tar.xz or .txz files are used for packaging} & Fixed & Busybox & 2010, PL & Focuses on the 4 Ms: multimedia, maintenance, miniserver and mystery (small games). Lightweight. \\\hline 
 			Alpine Linux & APK & Fixed & Busybox, OpenRC & 2005, NO & Uses musl as C system library. Designed to be small, simple and secure and used for servers, routers, embedded devices, etc. \\\hline
 			ALT Linux & RPM/APT & Fixed & systemd & 2001, RU & Early fork of Mandrake. \\\hline 
-			Arch Linux & Pacman & Rolling & systemd & 2002, CA & Follows KISS principle. \\\hline
+			Arch Linux & Pacman & Rolling & systemd & 2002, CA & Follows KISS principle. Traditionally, it was installed via a bootstrapping procedure. Users would set up the partitioning and file system arrangements for their Arch system, then bootstrap an install, chroot into it, and set it up. Nowadays, there is a text-based installer available. Has fairly vast repositories -- if the Arch User Repository is included. \\\hline
 			Batocera.linux & ? & Fixed & SysV & 2016, FR & Minimalist and dedicated to retrogaming. Can run on desktops, laptops, Raspberry Pi, etc. \\\hline
-			Bedrock Linux & NA & Fixed & NA & 2009, US & Meta distribution which allows one to use features from other different distributions. \\\hline
-			Chimera Linux & APK (bin); cports (src) & Rolling & Dinit & 2021, ES & Uses musl C library and FreeBSD userland. \\\hline
+			Bedrock Linux & N/A\footnote{Not applicable as it is a meta distribution} & Fixed & N/A\footnote{Not applicable as it is a meta distribution} & 2009, US & Meta distribution which allows one to use features from other different distributions. \\\hline
+			Chimera Linux & APK (bin); cports (src) & Rolling & Dinit & 2021, ES & Uses musl C library and FreeBSD userland. Installed via a bootstrapping procedure too. Appropriately for its name it is a unique blend of exotic features. It has fairly small software repositories though. \\\hline
 			Clear Linux & swupd & Rolling & systemd & 2015, US & Minimalist distribution designed with performance and cloud use in mind. \\\hline
 			CRUX & TXZ & Fixed & SysV & 2002, SE & Lightweight distro targeted towards advanced users. It uses tar.xz packaging system and has a relatively small collection of packages (making it similar to Slackware).\\\hline
-			Debian & dpkg/APT & Fixed & systemd & 1993, US & Basis of most Linux distros, such as Ubuntu.\\\hline
+			Debian & dpkg/APT & Fixed & systemd & 1993, US & Second-eldest continually developed Linux distribution and still very popular. It is also a popular basis for other distributions, such as Linux Mint, MX Linux and Ubuntu. Development is by a community that is democratically run. Has among the most vast repositories of any distribution. Stable releases are published every couple of years and is pretty conservative in its software versions. There are also testing and unstable branches and distributions based on these often have more frequent releases.\\\hline
 			Dragora GNU/Linux-Libre & TLZ & Fixed & SysV & 2009, AR & Uses only FOSS. \\\hline
 			EasyOS & PET & Fixed & SysV & 2018, AU & Experimental, uses Puppy tech. Containers can be used to run apps or desktops. \\\hline
 			Exherbo & Paludis & Rolling & systemd rec\footnote{As a source distribution that is aimed for configurability, the user gets to choose the init system. Although, systemd seems to be recommend} & 2009, DK & Essentially aiming to be like Gentoo, but with a better package manager. \\\hline
-			Fedora & RPM/dnf & Fixed & systemd & 2003, US & Based on earlier Red Hat Linux. Basis of RHEL. \\\hline
-			Gentoo & Portage & Rolling & OpenRC rec\footnote{Source distro that lets users to choose init system. System is installed from stage3 tarballs and both OpenRC and systemd stage3 tarballs are provided.} & 2002, US & Most popular source-based distribution. \\\hline
-			Guix System & Guix & Fixed & Shepherd & 2015, FR & Whole system configured in Guile language; reproducible builds. \\\hline
+			Fedora & RPM/dnf, Flatpak, OSTree & Fixed & systemd & 2003, US & Continuation of the earlier Red Hat Linux. Basis of RHEL and CentOS Stream. Fairly cutting edge in its software and has six monthly releases. Has its own distinctive wallpaper art. GNOME is default user interface. Development sponsored by Red Hat, although its large community is involved in its development too. \\\hline
+			Gentoo & Portage & Rolling & OpenRC rec\footnote{Source distro that lets users to choose init system. System is installed from stage3 tarballs and both OpenRC and systemd stage3 tarballs are provided.} & 2002, US & Bootstrap approach to installation that involves stage3 tarballs (which contain a basic Gentoo system). Gentoo is developed by a community that is democratically run. It is probably the most popular source-based distribution. \\\hline
+			Guix System & Guix & Fixed & Shepherd & 2015, FR & Whole system configured in Guile language. Designed for reproducible builds. Guix package manager is based on Nix, with the main difference being that it uses a different configuration language. Like Nix it installs each package to its own directory. \\\hline
 			Hyperbola GNU/Linux-libre & Pacman & Fixed & OpenRC & 2017, BR & Only uses FOSS. Previously used patches from Debian and snapshots from Arch. \\\hline
 			IPFire & pakfire & Fixed & Other & <2015, DE & Uses WebUI. \\\hline
 			KaOS & Pacman & Rolling & systemd & 2003, US & Uses KDE as default desktop. \\\hline 
 			LibreELEC & None & Fixed & systemd & 2016, US & Designed for running Kodi.\\\hline
 			LinuxConsole & opkg & Fixed & ? & 2004, FR & Default interface is MATE, and it is a live CD distribution. \\\hline
-			Linux From Scratch & None & Fixed & Up to user & 1999, CA & Self-made Linux system. \\\hline
-			Mageia & RPM/dnf & Fixed & systemd & 2011, FR & urpmi was original package manager; forked from Mandriva Linux by former employees of its maintainer. \\\hline
-			NixOS & Nix & Fixed & systemd & 2003, NL & Whole system configured in Nix language; reproducible builds. \\\hline
+			Linux From Scratch & None & Fixed & Up to user & 1999, CA & This distribution is essentially a book that instructs users how to build their own Linux system all on their own, without a package manager, or a tarball full of pre-compiled software. The user is the package manager of this system. It is an educational experience to build such a system, but usually takes >6 hours. \\\hline
+			Mageia & RPM/dnf & Fixed & systemd & 2011, FR & urpmi was original package manager. Forked from Mandriva Linux by former employees of its maintainer. I would guess it is probably the most popular Mandriva Linux fork.\\\hline
+			NixOS & Nix & Fixed & systemd & 2003, NL & Whole system configured in Nix language, a functional programming language. It is designed for reproducible builds. The Nix package manager installs all packages into its own directory within /nix/store. \\\hline
 			openmamba GNU/Linux & RPM/dnf & Rolling & systemd & <2008, IT & Offers KDE and LXQt desktops. \\\hline
 			OpenMandriva Lx & RPM/dnf & Fixed \& rolling. & systemd & 2013, FR & Smaller development team than Mageia. Built with Clang instead of GCC. \\\hline
-			openSUSE & RPM/zypper & Fixed \& rolling. & systemd & 1994, DE & Has openSUSE build service for building custom packages. Btrfs is default filesystem on it. \\\hline
+			openSUSE & RPM/zypper & Fixed \& rolling. & systemd & 1994, DE & Developed by its own community, although funded by SUSE. It is not exactly beginner-friendly, but it has a graphical installer and package management facilities. Has openSUSE build service for building custom packages and with these extra repositories, its package repositories are pretty vast. Btrfs is default filesystem on it. Comes in two different editions -- Leap and Tumbleweed -- which follow fixed and rolling release models, respectively. \\\hline
 			OviOS Linux & Pacman & Fixed & SysV & <2017, CA & Independent storage OS aimed at performance. \\\hline
 			paldo GNU/Linux & Upkg & Rolling & ? & 2004, CH & Hybrid (binary/source) approach to package management. Used for data rescue and uses GNOME. \\\hline
-			PCLinuxOS & RPM/APT & Rolling & SysV & 2003, US & Designed to be beginner-friendly. \\\hline
+			PCLinuxOS & RPM/APT & Rolling & SysV & 2003, US & Designed to be beginner-friendly. Also has a benevolent dictator for life, Bill Reynolds. \\\hline
 			Peropesis & None & Fixed & SysV & 2021, LT & Minimalist, live medium and command line-based. \\\hline
 			Photon OS & rpm-ostress & Fixed & systemd & <2016, US & Minimal and optimized for VMware platforms. \\\hline
 			Pisi Linux & PiSi & Fixed & SysV & 2013?, TR & Based on defunct Pardus Linux (that used PiSi). \\\hline
 			PLD Linux & RPM/Poldek & Rolling & Other\footnote{Or so says DistroWatch, cannot find information on this from other sources.} & 1998, PL & Aimed at advanced users, designed to be configurable. \\\hline
-			Plop Linux & NA\footnote{Booted as live medium, so none would probably be necessary. Also worth noting that DistroWatch does not specify a package management system for it.} & Fixed & SysV & <2009, AT& Small distro for live use, so that people can rescue data, repair damaged systems, automate tasks, etc. \\\hline
+			Plop Linux & N/A\footnote{Booted as live medium, so none would probably be necessary. Also worth noting that DistroWatch does not specify a package management system for it.} & Fixed & SysV & <2009, AT& Small distro for live use, so that people can rescue data, repair damaged systems, automate tasks, etc. \\\hline
 			Puppy Linux & PET & Fixed & SysV & 2003, AU & Lightweight, designed to be run from live sessions and can be run from RAM. \\\hline
 			recalbox & ?\footnote{Field left blank on DistroWatch} & Fixed & SysV & <2019, global\footnote{According to DistroWatch} & Dedicated to running video games on emulated retro/console platforms and running Kodi. \\\hline
 			rlxos & Flatpak & Fixed & systemd & 2023?, IN & Uses immutable filesystem, Btrfs by default and Bolt AI assistant. \\\hline
 			ROSA & RPM/dnf & Fixed & systemd & 2010, RU & Previously used urpmi. Developed by a Russian company. \\\hline
-			Slackware Linux & TXZ & Fixed & SysV & 1993, US & Oldest continually developed Linux distro. \\\hline
+			Slackware Linux & TXZ & Fixed & SysV & 1993, US & Oldest continually developed Linux distro. Has fairly small official repositories, although unofficial repositories contain packaging files (called SlackBuilds) for building many more packages. Development is led by its original creator, Patrick Volkerding who is the benevolent dictator for life of the community. The frequency of new releases has markedly declined in recent years, with over five years between the most recent two stable releases.  \\\hline
 			SliTaz GNU/Linux & TazPKG & Fixed & Busybox? & 2008, CH & Lightweight, loads from RAM with just 256MB required. \\\hline  
-			Solus & eopkg & Rolling & systemd & 2015, IE & Started the development of the Budgie desktop environment. \\\hline
+			Solus & eopkg & Rolling & systemd & 2015, IE & Designed to be beginner-friendly. Started the development of the Budgie desktop environment. \\\hline
 			Tiny Core Linux & TCE & Fixed & Busybox & 2009, US & Uses 16MB RAM to boot and is designed to be the lightest distro possible. \\\hline
-			Void & XBPS & Rolling & runit & 2008, ES & Offers editions using glibc and musl. \\\hline
+			Void & XBPS & Rolling & runit & 2008, ES & Offers editions using glibc and musl. Otherwise, it is very similar to Arch. It too has a focus on adhering to KISS and installed via a bootstrapping procedure. Its repositories are generally pretty small compared to Arch's though, probably due to a smaller community. \\\hline
 			Venom Linux & scratchpkg & Rolling & SysV & 2021, MY & Uses Openbox for GUI and has textual installer. \\\hline
 			Vine Linux & RPM/APT & Rolling & ? & 1998, JP & Had fixed releases, with the last released in 2017. \\\hline
 	\end{longtable}
