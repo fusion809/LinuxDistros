@@ -48,7 +48,7 @@
 	\end{tightcenter}
 	  
 	\begin{longtable}{|p{3.5cm}|p{2.3cm}|p{1.6cm}|p{2.4cm}|p{2.0cm}|p{14.7cm}|}
-			\hline
+		\caption{Currently maintained Linux distributions}\\\hline
 			\textbf{Distro} & \textbf{PMS}\footnote{Package management system} & \textbf{Release} & \textbf{Init system} & \textbf{Founded} & \textbf{Other characteristics}\\\hline
 			\multicolumn{6}{|c|}{\textbf{Independent}} \\\hline
 			4MLinux & TXZ\footnote{Which I use to indicate that tar.xz or .txz files are used for packaging} & Fixed & Busybox & 2010, PL & Focuses on the 4 Ms: multimedia, maintenance, miniserver and mystery (small games). Lightweight. \\\hline 
@@ -98,10 +98,12 @@
 			Venom Linux & scratchpkg & Rolling & SysV & 2021, MY & Uses Openbox for GUI and has textual installer. \\\hline
 			Vine Linux & RPM/APT & Rolling & ? & 1998, JP & Had fixed releases, with the last released in 2017. \\\hline
 			\multicolumn{6}{|c|}{\textbf{Arch-based}} \\\hline
+			Artix Linux & Pacman & Rolling & OpenRC, runit, s6 & 2017, Global & Meant to be a continuation of Arch-OpenRC and Manjaro-OpenRC projects and offers several editions with different user interfaces. \\\hline
 			CachyOS & Pacman & Rolling & systemd & $\leq$2022, DE & Optimized for speed and security. Has command-line and graphical installers. \\\hline
+			Ditana GNU/Linux & Pacman & Rolling & systemd & 2024, CH & Designed to be at an optimal position on the spectrum between customizability and user friendliness. Uses Xfce as default user interface.\\\hline
 			EndeavourOS & Pacman & Rolling & systemd & 2019, NL & Aims to be spiritual successor to Antergos. \\\hline
 			Manjaro & Pacman & Rolling & systemd & 2011, AT, DE, FR & Very popular Arch derivative, designed to be fairly easy to setup and use. Creates lovely artwork too. \\\hline
-			Parabola GNU/Linux-libre & Pacman & Rolling & systemd & 2009, CL & FOSS version of Arch. \\\hline
+			Parabola GNU/Linux-libre & Pacman & Rolling & systemd, OpenRC & 2009, CL & FOSS version of Arch. \\\hline
 			\multicolumn{6}{|c|}{\textbf{Debian-based}} \\\hline
 			antiX & dpkg/APT & Fixed & SysV & 2007?, GR & \\\hline
 			deepin & dpkg/APT & Fixed & systemd & 2004, CN & Was once based on Ubuntu, but since 2015 has been based on Debian. Created its own desktop environment called Deepin Desktop Environment (DDE). \\\hline
@@ -110,10 +112,17 @@
 			KDE neon & dpkg/APT & Fixed & systemd & 2016, UK & Based on Ubuntu LTS editions. Designed to feature the latest KDE Plasma 5. \\\hline
 			Linux Mint & dpkg/APT & Fixed & systemd & 2006, IE & Based on Ubuntu and designed to be beginner-friendly. Pioneered the development of Cinnamon desktop environment. \\\hline
 			MX Linux & dpkg/APT & Fixed & SysV & 2014, GR & Based on antiX. \\\hline
+			Nitrux & dpkg/APT & Fixed & OpenRC & 2017, MX & Based on unstable branch of Debian, with additional packages from Ubuntu LTS. Uses JWM and customized KDE Plasma desktop called NX Desktop.\\\hline
 			Pop!\_OS & dpkg/APT & Fixed & systemd & 2017, US & Created by the Linux computer retailer System76. Created COSMIC distribution. \\\hline
 			Ubuntu & dpkg/APT & Fixed & systemd & 2004, IM & Based on testing branch of Debian. Has 6-monthly releases and 2-yearly LTS releases. Beginner-friendly distro. \\\hline
 			Zorin OS & dpkg/APT & Fixed & systemd & 2009, IE & Based on Ubuntu LTS releases. \\\hline
-			\multicolumn{6}{|c|}{\textbf{Fedora-based}} \\\hline			
+			\multicolumn{6}{|c|}{\textbf{Fedora-based}} \\\hline
+			AlmaLinux OS & RPM/dnf & Fixed & systemd & 2020, US & Rebuild of RHEL that is free. Essentially a replacement for what CentOS used to be. \\\hline
+			CentOS & RPM/dnf & Semi-rolling & systemd & 2003, US & Originally, it was a free rebuild of Red Hat Enterprise Linux (RHEL). This version followed a fixed release model. Since 2020 this version has been discontinued. CentOS Stream now exists and is mid-stream between Fedora and RHEL. \\\hline
 			Nobara & RPM/dnf & Fixed & systemd & 2022, US & User-friendly derivative of Fedora. \\\hline
+			Red Hat Enterprise Linux (RHEL) & RPM/dnf & Fixed & systemd & 2000, US & Downstream commercial counterpart to Fedora developed by Red Hat. It is not free unlike most distributions but comes with potentially about a decade of support. \\\hline
+			\multicolumn{6}{|c|}{\textbf{openSUSE-based}} \\\hline
+			Regata OS & RPM/zypper & Fixed & systemd & 2021, BR & Designed for gaming, has out of the box Google Drive support and uses KDE Plasma as default user interface. \\\hline
+			SUSE Linux Enterprise (SLE) & RPM/zypper & Fixed & systemd & 2000, DE & Produced by SUSE, a German Linux company, and is a paid product. SUSE is noted for providing >13 years of support for SLE. \\\hline
 	\end{longtable}
 	\end{document}
